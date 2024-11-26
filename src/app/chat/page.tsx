@@ -8,8 +8,9 @@ export default function Chat() {
 
   return (
     <div>
-      {messages.map((message) => (
+      {messages.map((message, index) => (
         <Message
+          key={index}
           position={message.sender ==='user'? "right" : "left" }
           content={message.context}
           status={message.status}
