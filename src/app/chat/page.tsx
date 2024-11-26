@@ -1,16 +1,43 @@
 "use client";
 
-import { useState } from "react";
 import Message from "./components/Message";
+import { useChatStore } from "../../../store";
 
 export default function Chat() {
-  const [count, setCount] = useState(0);
+  const { messages, add } = useChatStore();
 
   return (
     <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
-      <Message position={"left"} content={"hello"} status={"pass"} time={"1"} />
+      {messages.map((message) => (
+        <Message
+          position={message.sender ==='user'? "right" : "left" }
+          content={message.context}
+          status={message.status}
+          time={"1"}
+        />
+      ))}
+      <button
+        onClick={() =>
+          add({
+            context: "user",
+            sender: "user",
+            status: "pass",
+          })
+        }
+      >
+        Click me user
+      </button>
+      <button
+        onClick={() =>
+          add({
+            context: "assistent",
+            sender: "assistent",
+            status: "pass",
+          })
+        }
+      >
+        Click me assistent
+      </button>
     </div>
   );
 }

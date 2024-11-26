@@ -71,7 +71,7 @@ function Message(props: MessageProps) {
       </div>
       <ChatAvatar
         isShow={position === "right"}
-        icon={"userImg"}
+        icon={myLogo.src}
         style={{ marginLeft: 8 }}
       />
     </div>
