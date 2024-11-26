@@ -19,7 +19,7 @@ interface MessageProps {
 }
 
 function Message(props: MessageProps) {
-  const { position, content, status, time, model } = props;
+  const { position, content, status, time } = props;
   const mdi = new MarkdownIt({
     html: true,
     linkify: true,
