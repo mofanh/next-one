@@ -2,12 +2,10 @@
 
 import Message from "./components/Message";
 import { useChatStore } from "../../../store";
-import { fetchXfSpark } from "@/client/platforms/XfSpark";
-import { xf } from "@/client/platforms/xf";
 import { iflytek } from "@/client/platforms/iflytek";
 
 export default function Chat() {
-  const { messages, add, onUserInput } = useChatStore();
+  const { messages, add } = useChatStore();
 
   return (
     <div>
