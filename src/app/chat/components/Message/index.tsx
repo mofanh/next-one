@@ -2,8 +2,9 @@ import MarkdownIt from "markdown-it";
 import { useMemo, useRef } from "react";
 import ChatAvatar from "../ChatAvatar";
 import { Spin } from "antd";
+import classNames from "classnames";
 
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
 
 import myLogo from "../../../fonts/logo-my.jpg";
 
@@ -20,6 +21,8 @@ interface MessageProps {
 
 function Message(props: MessageProps) {
   const { position, content, status, time } = props;
+  const isUser = position === "right";
+
   const mdi = new MarkdownIt({
     html: true,
     linkify: true,
@@ -50,9 +53,8 @@ function Message(props: MessageProps) {
   }, [content, position]);
 
   return (
-    <div className={styles.messageContainer}>
+    <div className={isUser ? styles["chat-message-user"] : styles["chat-message"]}>
       <ChatAvatar
-        isShow={position === "left"}
         icon={myLogo.src}
         style={{ marginRight: 8 }}
       />
@@ -69,11 +71,6 @@ function Message(props: MessageProps) {
         {/* {pluginInfo && <PluginCard {...pluginInfo} />} */}
         <div>{status === "loading" ? <Spin /> : renderText}</div>
       </div>
-      <ChatAvatar
-        isShow={position === "right"}
-        icon={myLogo.src}
-        style={{ marginLeft: 8 }}
-      />
     </div>
   );
 }

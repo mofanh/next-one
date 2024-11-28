@@ -1,7 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async rewrites() {
+    return [
+        {
+            source: '/api/v1/chat/completions',
+            destination: 'https://spark-api-open.xf-yun.com/v1/chat/completions',
+        }
+    ];
+}
 };
 
 export default nextConfig;
