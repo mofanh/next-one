@@ -2,7 +2,6 @@ import MarkdownIt from "markdown-it";
 import { useMemo, useRef } from "react";
 import ChatAvatar from "../ChatAvatar";
 import { Spin } from "antd";
-import classNames from "classnames";
 
 import styles from "./index.module.scss";
 
