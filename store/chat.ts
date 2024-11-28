@@ -1,4 +1,3 @@
-import { fetchXfSpark } from '@/client/platforms/XfSpark';
 import { create } from 'zustand';
 
 // 定义消息状态的接口
