@@ -1,9 +1,9 @@
-import { NextResponse } from "next/server";
+// import { NextResponse } from "next/server";
 
-export async function GET(request: Request) {
+// export async function GET(request: Request) {
 
-    return NextResponse.json({
-        data: { title: 'Today is Sunday~' },
-        success: true,
-    });
-}
+//     return NextResponse.json({
+//         data: { title: 'Today is Sunday~' },
+//         success: true,
+//     });
+// }
