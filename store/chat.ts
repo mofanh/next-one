@@ -21,7 +21,7 @@ export const useChatStore = create<MessageStore>((set) => ({
     add: (newMessage) => set((state) => ({
         messages: [...state.messages, newMessage]
     })),
-    updateLastMessage: (newMessage) =>{
+    updateLastMessage: (newMessage: any) =>{
         set((state) => ({
             messages: [...state.messages.slice(0, -1), newMessage]
         }))

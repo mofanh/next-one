@@ -5,7 +5,7 @@ class RetriableError extends Error { }
 class FatalError extends Error { }
 
 export function iflytek(content: string) {
-  const controller = new AbortController();
+//   const controller = new AbortController();
   fetchEventSource("/api/v1/chat/completions", {
     method: "POST",
     headers: {
@@ -22,7 +22,7 @@ export function iflytek(content: string) {
       ],
       stream: true,
     }),
-    signal: controller.signal,
+    // signal: controller.signal,
     async onopen(response) {
         if (response.ok && response.headers.get('content-type') === EventStreamContentType) {
             useChatStore.getState().add({
@@ -49,7 +49,7 @@ export function iflytek(content: string) {
       useChatStore.getState().concatLastMessage(delta)
     },
     onclose() {
-        controller.signal.onabort
+        // controller.signal.onabort
         // if the server closes the connection unexpectedly, retry:
         throw new RetriableError();
     },
