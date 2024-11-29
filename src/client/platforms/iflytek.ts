@@ -1,4 +1,4 @@
-import { EventStreamContentType, fetchEventSource } from "@fortaine/fetch-event-source";
+import { EventSourceMessage, EventStreamContentType, fetchEventSource } from "@fortaine/fetch-event-source";
 import { useChatStore } from "../../../store";
 
 class RetriableError extends Error {}
@@ -23,7 +23,7 @@ export function iflytek(content: string) {
     }
   };
 
-  const handleMessage = (msg: MessageEvent) => {
+  const handleMessage = (msg: EventSourceMessage) => {
     if (msg.data === "[DONE]") {
       controller.abort();
     }
@@ -67,6 +67,7 @@ export function iflytek(content: string) {
       "Content-Type": "application/json",
       Authorization: "Bearer nPLgqzEHEtEjZcnsDKdS:mZIvrDDeVfZRpYejdKau",
     },
+
     body: JSON.stringify(buildRequestBody(content)),
     signal: controller.signal,
     onopen: handleOpen,
