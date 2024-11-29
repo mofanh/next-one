@@ -12,6 +12,7 @@ interface MessageStore {
         sender: 'system' | 'assistent' | 'user';
         status: 'pass' | 'loading' | 'error' | string;
     }) => void;
+    concatLastMessage: (context: string) => void;
 }
 
 export const useChatStore = create<MessageStore>((set) => ({
@@ -20,4 +21,22 @@ export const useChatStore = create<MessageStore>((set) => ({
     add: (newMessage) => set((state) => ({
         messages: [...state.messages, newMessage]
     })),
+    updateLastMessage: (newMessage) =>{
+        set((state) => ({
+            messages: [...state.messages.slice(0, -1), newMessage]
+        }))
+    },
+    concatLastMessage: (context: string) => {
+        set((state) => {
+            const lastMessage = state.messages[state.messages.length - 1];
+            const concatenatedMessage = {
+                ...lastMessage,
+                status: 'pass',
+                context: lastMessage?.context || '' + context
+            };
+            return {
+                messages: [...state.messages.slice(0, -1), concatenatedMessage]
+            };
+        });
+    }
 }));
