@@ -5,9 +5,7 @@ class RetriableError extends Error { }
 class FatalError extends Error { }
 
 export function iflytek(content: string) {
-    // const { messages, add, concatLastMessage } = useChatStore();
   const controller = new AbortController();
-  let index = 0;
   fetchEventSource("/api/v1/chat/completions", {
     method: "POST",
     headers: {
