@@ -26,9 +26,7 @@ export default function Chat() {
             status: "pass",
           });
           event.preventDefault();
-          iflytek('你是谁')
-          // xf('你好')
-          // onUserInput()
+          iflytek('说说rust')
         }}
       >
         Click me user

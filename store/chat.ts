@@ -32,7 +32,7 @@ export const useChatStore = create<MessageStore>((set) => ({
             const concatenatedMessage = {
                 ...lastMessage,
                 status: 'pass',
-                context: lastMessage?.context || '' + context
+                context: lastMessage?.context + context
             };
             return {
                 messages: [...state.messages.slice(0, -1), concatenatedMessage]
