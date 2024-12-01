@@ -11,7 +11,6 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import AppNavbar from "./components/AppNavbar";
 import Header from "./components/Header";
-import MainGrid from "../app/dashboard/MainGrid";
 import SideMenu from "./components/SideMenu";
 import AppTheme from "../shared-theme/AppTheme";
 import {
@@ -30,7 +29,7 @@ const xThemeComponents = {
 
 export default function Layout(props: {
   disableCustomTheme?: boolean;
-  children: any;
+  children: React.ReactNode;
 }) {
   const { children } = props;
   console.log("children--", children);
