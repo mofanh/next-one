@@ -61,13 +61,13 @@ export function iflytek(content: string) {
     stream: true
 });
 
+const getHeaders = (token: string | undefined) => ({
+  "Content-Type": "application/json",
+  Authorization: `Bearer ${token}`,
+})
   fetchEventSource("/api/v1/chat/completions", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: "Bearer nPLgqzEHEtEjZcnsDKdS:mZIvrDDeVfZRpYejdKau",
-    },
-
+    headers: getHeaders(process.env.IFLYTEC_TOKEN),
     body: JSON.stringify(buildRequestBody(content)),
     signal: controller.signal,
     onopen: handleOpen,

@@ -4,9 +4,10 @@ import Message from "./components/Message";
 import { useChatStore } from "../../../store";
 import { iflytek } from "@/client/platforms/iflytek";
 
+import styles from "./index.module.scss";
+
 export default function Chat() {
   const { messages, add } = useChatStore();
-
   return (
     <div>
       {messages.map((message, index) => (
@@ -26,7 +27,7 @@ export default function Chat() {
             status: "pass",
           });
           event.preventDefault();
-          iflytek('说说rust')
+          iflytek("你好");
         }}
       >
         Click me user
@@ -42,6 +43,7 @@ export default function Chat() {
       >
         Click me assistent
       </button>
+      <textarea id="chat-input" className={styles["chat-input"]} />
     </div>
   );
 }
