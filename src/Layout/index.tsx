@@ -32,7 +32,6 @@ export default function Layout(props: {
   children: React.ReactNode;
 }) {
   const { children } = props;
-  console.log("children--", children);
   return (
     <AppTheme {...props} themeComponents={xThemeComponents}>
       <CssBaseline enableColorScheme />
