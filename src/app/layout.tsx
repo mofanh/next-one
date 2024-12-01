@@ -1,8 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.scss";
-import Header from "./components/Header";
-import { Divider } from "antd";
+import Layout from "@/Layout";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -40,9 +39,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header />
-        <Divider style={{ borderColor: "#7cb305" }}></Divider>
-        {children}
+        <Layout children={children} />
       </body>
     </html>
   );
