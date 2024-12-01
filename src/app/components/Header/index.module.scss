@@ -1,0 +1,24 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .left {
+    display: flex;
+  }
+
+  .navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+
+  .navigation li {
+    margin-left: 20px;
+  }
+}
+
+.logo {
+  height: 50px; // 根据实际Logo大小调整
+}

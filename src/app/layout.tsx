@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.scss";
 import Header from "./components/Header";
+import { Divider } from "antd";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,7 +28,7 @@ export const viewport: Viewport = {
     { media: "(prefers-color-scheme: light)", color: "#fafafa" },
     { media: "(prefers-color-scheme: dark)", color: "#151515" },
   ],
-}; 
+};
 
 export default function RootLayout({
   children,
@@ -40,6 +41,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
+        <Divider style={{ borderColor: "#7cb305" }}></Divider>
         {children}
       </body>
     </html>
