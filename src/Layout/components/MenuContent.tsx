@@ -12,6 +12,7 @@ import AssignmentRoundedIcon from '@mui/icons-material/AssignmentRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import HelpRoundedIcon from '@mui/icons-material/HelpRounded';
+// import { useRouter } from 'next/router';
 
 const mainListItems = [
   { text: 'Home', icon: <HomeRoundedIcon /> },
@@ -27,12 +28,25 @@ const secondaryListItems = [
 ];
 
 export default function MenuContent() {
+    const onChangePage = (index) => {
+        const routePaths = [
+            '/',
+            '/analytics',
+            '/clients',
+            '/tasks',
+            '/settings',
+            '/about',
+            '/feedback'
+        ];
+        const targetRoute = routePaths[index];
+        console.log('targetRoute--', targetRoute);
+    };
   return (
     <Stack sx={{ flexGrow: 1, p: 1, justifyContent: 'space-between' }}>
       <List dense>
         {mainListItems.map((item, index) => (
           <ListItem key={index} disablePadding sx={{ display: 'block' }}>
-            <ListItemButton selected={index === 0}>
+            <ListItemButton selected={index === 0} onClick={() => onChangePage(index)}>
               <ListItemIcon>{item.icon}</ListItemIcon>
               <ListItemText primary={item.text} />
             </ListItemButton>

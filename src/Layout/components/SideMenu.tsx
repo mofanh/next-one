@@ -68,10 +68,10 @@ export default function SideMenu() {
             variant="body2"
             sx={{ fontWeight: 500, lineHeight: "16px" }}
           >
-            Riley Carter
+            Lier
           </Typography>
           <Typography variant="caption" sx={{ color: "text.secondary" }}>
-            riley@email.com
+            eaulerd@gmail.com
           </Typography>
         </Box>
         <OptionsMenu />

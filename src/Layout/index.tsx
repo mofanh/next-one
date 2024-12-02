@@ -60,7 +60,6 @@ export default function Layout(props: {
           >
             <Header />
             {children}
-            {/* <MainGrid /> */}
           </Stack>
         </Box>
       </Box>
