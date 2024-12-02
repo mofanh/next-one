@@ -37,3 +37,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## Lib
 * 状态存储 Zustant[https://ouweiya.github.io/zustand-zh/docs/guides/nextjs]
+
+## 后续优化
+1. 组件代码分离为config和index => MenuContent.tsx...

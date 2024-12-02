@@ -16,7 +16,7 @@ export default function Chat() {
           position={message.sender === "user" ? "right" : "left"}
           content={message.context}
           status={message.status}
-          time={"1"}
+          time={"timer"}
         />
       ))}
       <button
