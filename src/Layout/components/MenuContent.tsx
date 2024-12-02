@@ -27,6 +27,7 @@ const secondaryListItems = [
   { text: "Feedback", icon: <HelpRoundedIcon />, path: "/feedback" },
 ];
 export default function MenuContent() {
+  const [selected, setSelected] = React.useState(0);
   return (
     <Stack sx={{ flexGrow: 1, p: 1, justifyContent: "space-between" }}>
       <List dense>
@@ -35,9 +36,10 @@ export default function MenuContent() {
             key={index}
             href={item.path}
             style={{ textDecoration: "none", color: "inherit" }}
+            onClick={() => setSelected(index)}
           >
             <ListItem key={index} disablePadding sx={{ display: "block" }}>
-              <ListItemButton selected={index === 0}>
+              <ListItemButton selected={index === selected}>
                 <ListItemIcon>{item.icon}</ListItemIcon>
                 <ListItemText primary={item.text} />
               </ListItemButton>
@@ -54,7 +56,7 @@ export default function MenuContent() {
             style={{ textDecoration: "none", color: "inherit" }}
           >
             <ListItem key={index} disablePadding sx={{ display: "block" }}>
-              <ListItemButton selected={index === 0}>
+              <ListItemButton>
                 <ListItemIcon>{item.icon}</ListItemIcon>
                 <ListItemText primary={item.text} />
               </ListItemButton>
