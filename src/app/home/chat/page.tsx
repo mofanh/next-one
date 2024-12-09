@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Message from "./components/Message";
-import { useChatStore } from "../../../store";
+import { useChatStore } from "../../../../store";
 import { iflytek } from "@/client/platforms/iflytek";
 
 import styles from "./index.module.scss";

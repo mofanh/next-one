@@ -5,7 +5,7 @@ import { Spin } from "antd";
 
 import styles from "./index.module.scss";
 
-import myLogo from "../../../fonts/logo-my.jpg";
+import myLogo from "../../../../fonts/logo-my.jpg";
 
 interface MessageProps {
   position: "left" | "right";

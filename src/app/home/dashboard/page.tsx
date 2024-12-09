@@ -5,14 +5,14 @@ import Grid from "@mui/material/Grid2";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import Copyright from "../../Layout/internals/components/Copyright";
-import ChartUserByCountry from "../../Layout/components/ChartUserByCountry";
-import CustomizedTreeView from "../../Layout/components/CustomizedTreeView";
-import CustomizedDataGrid from "../../Layout/components/CustomizedDataGrid";
-import HighlightedCard from "../../Layout/components/HighlightedCard";
-import PageViewsBarChart from "../../Layout/components/PageViewsBarChart";
-import SessionsChart from "../../Layout/components/SessionsChart";
-import StatCard, { StatCardProps } from "../../Layout/components/StatCard";
+import Copyright from "../../../Layout/internals/components/Copyright";
+import ChartUserByCountry from "../../../Layout/components/ChartUserByCountry";
+import CustomizedTreeView from "../../../Layout/components/CustomizedTreeView";
+import CustomizedDataGrid from "../../../Layout/components/CustomizedDataGrid";
+import HighlightedCard from "../../../Layout/components/HighlightedCard";
+import PageViewsBarChart from "../../../Layout/components/PageViewsBarChart";
+import SessionsChart from "../../../Layout/components/SessionsChart";
+import StatCard, { StatCardProps } from "../../../Layout/components/StatCard";
 
 const data: StatCardProps[] = [
   {
@@ -48,7 +48,7 @@ const data: StatCardProps[] = [
   },
 ];
 
-export default function MainGrid() {
+export default function Dashboard() {
   return (
     <Box sx={{ width: "100%", maxWidth: { sm: "100%", md: "1700px" } }}>
       {/* cards */}
