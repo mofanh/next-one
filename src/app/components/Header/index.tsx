@@ -8,7 +8,6 @@ import MenuButton from "../MenuButton";
 import ColorModeIconDropdown from "../../../shared-theme/ColorModeIconDropdown";
 
 import Search from "./Search";
-// import { Route, Routes } from "react-router";
 
 export default function Header() {
   return (
@@ -24,9 +23,6 @@ export default function Header() {
       }}
       spacing={2}
     >
-      {/* <Routes>
-        <Route path="*" element={<NavbarBreadcrumbs />} />
-      </Routes> */}
       <NavbarBreadcrumbs />
       <Stack direction="row" sx={{ gap: 1 }}>
         <Search />

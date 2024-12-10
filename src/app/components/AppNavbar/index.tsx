@@ -12,6 +12,7 @@ import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
 import SideMenuMobile from './SideMenuMobile';
 import MenuButton from '../MenuButton';
 import ColorModeIconDropdown from '@/shared-theme/ColorModeIconDropdown';
+import { usePathname } from 'next/navigation';
 
 const Toolbar = styled(MuiToolbar)({
   width: '100%',
@@ -35,6 +36,10 @@ export default function AppNavbar() {
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
   };
+
+
+  const pathname = usePathname();
+  const pathSegments = pathname?.split('/').filter(segment => segment !== '');
 
   return (
     <AppBar
@@ -66,7 +71,7 @@ export default function AppNavbar() {
           >
             <CustomIcon />
             <Typography variant="h4" component="h1" sx={{ color: 'text.primary' }}>
-              Dashboard
+              {pathSegments[pathSegments.length - 1]}
             </Typography>
           </Stack>
           <ColorModeIconDropdown />

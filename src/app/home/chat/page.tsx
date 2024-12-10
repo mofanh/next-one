@@ -10,7 +10,7 @@ import styles from "./index.module.scss";
 export default function Chat() {
   const { messages, add } = useChatStore();
   const [inputValue, setInputValue] = useState("");
-  const onSubmit = (event) => {
+  const onSubmit = (event: any) => {
     if (event.key === "Enter" && event.keyCode === 13 && event.shiftKey) {
       // shift + enter 无操作
     } else if (event.key === "Enter" && !event.shift) {

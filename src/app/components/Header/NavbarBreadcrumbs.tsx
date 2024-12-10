@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import Breadcrumbs, { breadcrumbsClasses } from '@mui/material/Breadcrumbs';
 import NavigateNextRoundedIcon from '@mui/icons-material/NavigateNextRounded';
-import { useRouter, useSearchParams, usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 const StyledBreadcrumbs = styled(Breadcrumbs)(({ theme }) => ({
   margin: theme.spacing(1, 0),
@@ -18,9 +18,7 @@ const StyledBreadcrumbs = styled(Breadcrumbs)(({ theme }) => ({
 
 export default function NavbarBreadcrumbs() {
   const pathname = usePathname();
-  console.log('pathname--', pathname);
   const pathSegments = pathname?.split('/').filter(segment => segment !== '');
-  console.log('pathSegments--', pathSegments);
 
   return (
     <StyledBreadcrumbs
