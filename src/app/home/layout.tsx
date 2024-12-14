@@ -18,11 +18,11 @@ const xThemeComponents = {
   ...treeViewCustomizations,
 };
 
-export default function HomeLayout({
-  children,
-}: Readonly<{
+export default function HomeLayout(props: {
   children: React.ReactNode;
-}>) {
+  analytics: React.ReactNode;
+}) {
+  const { children, analytics } = props;
   return (
     <AppTheme
       disableCustomTheme={false}
@@ -64,6 +64,7 @@ export default function HomeLayout({
               }}
             >
               {children}
+              {analytics}
             </Box>
           </Stack>
         </Box>
