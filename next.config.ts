@@ -9,6 +9,15 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/home',
+        permanent: true,
+      },
+    ]
+  },
   env: {
     IFLYTEC_TOKEN: process.env.IFLYTEC_TOKEN
   },
