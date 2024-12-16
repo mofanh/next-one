@@ -3,45 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.13.5",
-    "@emotion/styled": "^11.13.5",
-    "@fortaine/fetch-event-source": "^3.0.6",
-    "@mui/icons-material": "^6.1.9",
-    "@mui/material": "^6.1.9",
-    "@mui/x-charts": "^7.23.0",
-    "@mui/x-data-grid": "^7.23.0",
-    "@mui/x-data-grid-pro": "^7.23.0",
-    "@mui/x-date-pickers": "^7.23.0",
-    "@mui/x-date-pickers-pro": "^7.23.0",
-    "@mui/x-tree-view": "^7.23.0",
-    "antd": "^5.22.2",
-    "axios": "^1.7.8",
-    "dayjs": "^1.11.13",
-    "markdown-it": "^14.1.0",
-    "next": "15.0.3",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "zustand": "^5.0.1"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "next": "15.1.0"
   },
   "devDependencies": {
-    "@types/markdown-it": "^14.1.2",
+    "typescript": "^5",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "classnames": "^2.5.1",
-    "eslint": "9.15.0",
-    "eslint-config-next": "15.0.3",
-    "husky": "^9.1.7",
-    "lint-staged": "^15.2.10",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
     "postcss": "^8",
-    "sass": "^1.81.0",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "eslint": "^9",
+    "eslint-config-next": "15.1.0",
+    "@eslint/eslintrc": "^3"
   }
 }
