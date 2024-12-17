@@ -5,7 +5,7 @@ export default async function Home() {
   }
   const albums = await res.json();
   return (
-    <div>
+    <main>
       {albums.map((album: { id: number; title: string }) => {
         return (
           <div
@@ -16,6 +16,6 @@ export default async function Home() {
           </div>
         );
       })}
-    </div>
+    </main>
   );
 }
