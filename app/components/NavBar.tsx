@@ -1,5 +1,6 @@
 import { auth, signIn, signOut } from "@/auth";
 import Link from "next/link";
+import Image from "next/image";
 
 const NavBar = async () => {
   const session = await auth();
@@ -18,13 +19,19 @@ const NavBar = async () => {
               <form
                 action={async () => {
                   "use server";
-                  await signOut({redirectTo: '/'});
+                  await signOut({ redirectTo: "/" });
                 }}
               >
                 <button type="submit">logout</button>
               </form>
-              <Link href={`/dashboard/user/${session?.id}`}>
+              <Link href={`/dashboard/user/${session?.user?.name}`} className="flex">
                 <span>{session?.user?.name}</span>
+                <Image
+                  src={session?.user?.image}
+                  alt="A description of the image"
+                  width={20}
+                  height={20}
+                />
               </Link>
             </>
           ) : (
