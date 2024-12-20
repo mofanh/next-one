@@ -1,12 +1,16 @@
-export default async function Home() {
-  // const res = await fetch("https://jsonplaceholder.typicode.com/albums");
-  // if (!res.ok) {
-  //   throw new Error(`HTTP error! status: ${res.status}`);
-  // }
-  // const albums = await res.json();
+import SearchForm from "../components/SearchForm";
+
+export default async function Home({
+  searchParams,
+}: Promise<{ query: string }>) {
+  const query = (await searchParams).query;
   return (
     <main>
-      <h1 className="heading">Home</h1>
+      <section className="pink_container">
+        <h1 className="heading">Next one</h1>
+        <p className="sub-heading">submit idea</p>
+        <SearchForm query={query} />
+      </section>
     </main>
   );
 }
